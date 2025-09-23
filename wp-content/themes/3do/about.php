@@ -162,6 +162,7 @@ get_header(); ?>
     </div>
     <div class="about-certs section-certs container-layout-page">
         <div class="container-fluid">
+            <h3 class="title-section text-center"><?= get_field('title_section_cert', 'option') ?></h3>
             <div class="swiper">
                 <div class="swiper-wrapper">
                     <?php

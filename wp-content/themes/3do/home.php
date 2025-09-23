@@ -44,85 +44,6 @@ get_header(); ?>
             </div>
         </div>
     </div>
-    <div class="about-us container-layout-page">
-        <div class="container-fluid">
-            <div class="swiper">
-                <div class="swiper-wrapper" style="padding-bottom: 30px;">
-                    <?php
-                    if (have_rows('about_slide')):
-                        while (have_rows('about_slide')): the_row();
-                    ?>
-                            <div class="swiper-slide">
-                                <div class="row">
-                                    <div class="col-xl-5 col-lg-5 col-md-12 mb-4 mb-xl-0 mb-lg-0">
-                                        <h3 class="title-section"><?= get_sub_field('title_slide'); ?></h3>
-                                        <span class="description"><?= get_sub_field('desc_slide'); ?></span>
-                                        <?php if (get_sub_field('link_slide')): ?>
-                                            <a href="<?= get_sub_field('link_slide'); ?>" class="btn-default ripple-effect">Xem thêm</a>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="col-xl-7 col-lg-7 col-md-12">
-                                        <div class="list-img">
-                                            <?php for ($i = 1; $i <= 3; $i++) { ?>
-                                                <div class="img-item img-<?= $i; ?>">
-                                                    <?= wp_get_attachment_image(
-                                                        attachment_url_to_postid(get_sub_field('image_slide_' . $i)),
-                                                        'full',
-                                                        false,
-                                                        [
-                                                            'alt'   => 'Imgage about us',
-                                                            'loading' => 'lazy'
-                                                        ]
-                                                    ); ?>
-                                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                                                </div>
-                                            <?php } ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    <?php
-                        endwhile;
-                    endif;
-                    ?>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-
-        </div>
-    </div>
-    <div class="about-certs section-certs container-layout-page">
-        <div class="container-fluid">
-            <h3 class="title-section text-center"><?= get_field('title_section_cert', 'option') ?></h3>
-            <div class="swiper">
-                <div class="swiper-wrapper">
-                    <?php
-                    if (have_rows('cert_item', 'option')):
-                        while (have_rows('cert_item', 'option')): the_row();
-                    ?>
-                            <div class="swiper-slide">
-                                <div class="box-cert">
-                                    <?= wp_get_attachment_image(
-                                        attachment_url_to_postid(get_sub_field('icon_item', 'option')),
-                                        'full',
-                                        false,
-                                        [
-                                            'alt'   => 'Img cert',
-                                            'loading' => 'lazy'
-                                        ]
-                                    ); ?>
-                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                                    <span class="title-cert"><?= get_sub_field('title_item', 'option'); ?></span>
-                                </div>
-                            </div>
-                    <?php
-                        endwhile;
-                    endif;
-                    ?>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="about-brands section-brands container-layout-page">
         <div class="container-fluid">
             <h3 class="title-section text-center"><?= get_field('title_section_brand', 'option'); ?></h3>
@@ -173,72 +94,37 @@ get_header(); ?>
         </div>
     </div>
     <div class="background-special">
-        <div class="product-newest">
+        <div class="product-newest section-products">
             <div class="container-layout-page">
                 <div class="container-fluid">
                     <h3 class="title-section text-center"><?= get_field('title_section_product_newest'); ?></h3>
-                    <div class="box-product">
-                        <div class="swiper">
-                            <div class="swiper-wrapper" style="padding-bottom:30px;">
-                                <?php
-                                if (have_rows('slide_product')):
-                                    while (have_rows('slide_product')): the_row();
-                                ?>
-                                        <div class="swiper-slide">
-                                            <div class="row">
-                                                <div class="col-xl-5 mb-4 mb-xl-0 d-flex align-item-center justify-content-center">
-                                                    <div class="product-avatar">
-                                                        <?= wp_get_attachment_image(
-                                                            attachment_url_to_postid(get_sub_field('product_image')),
-                                                            'full',
-                                                            false,
-                                                            [
-                                                                'alt'   => 'Product image',
-                                                                'loading' => 'lazy'
-                                                            ]
-                                                        ); ?>
-                                                        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-7">
-                                                    <div class="product-info">
-                                                        <h4 class="title"><?= get_sub_field('product_name'); ?></h4>
-                                                        <span class="description"><?= get_sub_field('product_desc'); ?></span>
-                                                        <div class="brand-info">
-                                                            <span class="label">Thương hiệu:</span>
-                                                            <?php
-                                                            $brand = get_sub_field('product_brand');
-                                                            ?>
-                                                            <a href="<?= home_url('brand/' . $brand->slug) ?>" class="icon">
-                                                                <?= wp_get_attachment_image(
-                                                                    get_term_meta($brand->term_id, 'logo_brand', true),
-                                                                    'full',
-                                                                    false,
-                                                                    [
-                                                                        'alt' => esc_attr($brand->name),
-                                                                        'loading' => 'lazy'
-                                                                    ]
-                                                                ); ?>
-                                                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                                                            </a>
-                                                        </div>
-                                                        <div class="product-action">
-                                                            <a target="_blank" href="<?= get_sub_field('product_url') ? get_sub_field('product_url') : '#'; ?>" class="btn-default ripple-effect">
-                                                                <img loading="lazy" width="24" height="24" src="<?= home_url('/wp-content/themes/3do/assets/images/icons/icon-cart.svg'); ?>" alt="Icon">
-                                                                Đến mua hàng
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                    <div class="row">
+                        <?php
+                        $listProducts = get_field('list_product') ?? [];
+                        if ($listProducts) :
+                            foreach ($listProducts as $product) :
+                        ?>
+                                <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+                                    <div class="product-item">
+                                        <a class="thumb" href="<?= the_permalink($product->ID); ?>">
+                                            <?php
+                                            if (has_post_thumbnail($product->ID)) :
+                                                echo get_the_post_thumbnail($product->ID);
+                                            endif;
+                                            ?>
+                                        </a>
+                                        <div class="product-infor">
+                                            <a href="<?= the_permalink($product->ID); ?>" class="product-title"><?= $product->post_title; ?></a>
+                                            <span class="price-sale"><?= number_format((float) get_field('price_sale', $product->ID), 0, '.', '.') . 'đ'; ?></span>
+                                            <span class="price"><?= number_format((float) get_field('price', $product->ID), 0, '.', '.') . 'đ'; ?></span>
                                         </div>
-                                <?php
-                                    endwhile;
-                                endif;
-                                ?>
-                            </div>
-                            <div class="swiper-pagination"></div>
-                        </div>
+                                        <a href="<?= the_permalink($product->ID); ?>" class="product-detail">Đến xem sản phẩm →</a>
+                                    </div>
+                                </div>
+                        <?php
+                            endforeach;
+                        endif;
+                        ?>
                     </div>
                 </div>
             </div>
@@ -359,72 +245,6 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-        <div class="why-choose container-layout-page">
-            <div class="container-fluid">
-                <h3 class="title-section text-center"><?= get_field('title_section_why_choose', 'option'); ?></h3>
-                <span class="desc-section text-center"><?= get_field('desc_section_why_choose', 'option'); ?></span>
-                <div class="box-why-choose">
-                    <div class="list-reason">
-                        <?php
-                        if (have_rows('check_list_left_section_why_choose', 'option')):
-                            while (have_rows('check_list_left_section_why_choose', 'option')): the_row();
-                        ?>
-                                <div class="item">
-                                    <div class="icon">
-                                        <?= wp_get_attachment_image(
-                                            attachment_url_to_postid(get_sub_field('icon', 'option')),
-                                            'full',
-                                            false,
-                                            [
-                                                'alt' => 'Icon',
-                                            ]
-                                        ); ?>
-                                    </div>
-                                    <span class="text"><?= get_sub_field('text', 'option'); ?></span>
-                                </div>
-
-                        <?php
-                            endwhile;
-                        endif;
-                        ?>
-                    </div>
-                    <div class="image">
-                        <?= wp_get_attachment_image(
-                            attachment_url_to_postid(get_field('image_section_why_choose', 'option')),
-                            'full',
-                            false,
-                            [
-                                'alt' => 'Why choose us',
-                            ]
-                        ); ?>
-                    </div>
-                    <div class="list-reason">
-                        <?php
-                        if (have_rows('check_list_right_section_why_choose', 'option')):
-                            while (have_rows('check_list_right_section_why_choose', 'option')): the_row();
-                        ?>
-                                <div class="item">
-                                    <div class="icon">
-                                        <?= wp_get_attachment_image(
-                                            attachment_url_to_postid(get_sub_field('icon', 'option')),
-                                            'full',
-                                            false,
-                                            [
-                                                'alt' => 'Icon',
-                                            ]
-                                        ); ?>
-                                    </div>
-                                    <span class="text"><?= get_sub_field('text', 'option'); ?></span>
-                                </div>
-
-                        <?php
-                            endwhile;
-                        endif;
-                        ?>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <div class="list-parper container-layout-page">
         <div class="container-fluid">
@@ -466,23 +286,6 @@ get_header(); ?>
             </div>
         </div>
     </div>
-    <?php
-    if (get_field('image_ads')): ?>
-        <div class="banner-ads container-layout-page">
-            <div class="container-fluid">
-                <a target="_blank" href="<?= get_field('link_ads'); ?>" class="image-ads">
-                    <?= wp_get_attachment_image(
-                        attachment_url_to_postid(get_field('image_ads')),
-                        'full',
-                        false,
-                        [
-                            'alt' => 'Banner ads',
-                        ]
-                    ); ?>
-                </a>
-            </div>
-        </div>
-    <?php endif; ?>
     <div class="section-sale container-layout-page">
         <div class="container-fluid">
             <h3 class="title-section text-center"><?= get_field('title_section_sale', 'option'); ?></h3>

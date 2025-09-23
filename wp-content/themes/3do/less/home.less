@@ -1,0 +1,505 @@
+.home-page {
+    padding: 36px 0 67px;
+
+    .hero-banner {
+        border-radius: 20px;
+        height: 580px;
+        max-height: 100%;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+
+        .swiper {
+            height: 100%;
+        }
+
+        .swiper-pagination {
+            bottom: 30px !important;
+        }
+
+        .hero-bgr {
+            position: absolute;
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .hero-text {
+            max-width: 426px;
+            width: 100%;
+            margin: 124px 0 128px 169px;
+
+            .title {
+                margin-bottom: 0;
+                font-size: 48px;
+                font-weight: var(--font-weight-lg);
+                color: var(--background);
+
+                span {
+                    color: var(--color);
+                }
+            }
+
+            .description {
+                font-size: 24px;
+                margin: 24px 0 36px 0;
+                font-weight: var(--font-weight-sm);
+                color: var(--color-text-secondary);
+            }
+        }
+    }
+
+    .about-us {
+        margin: 67px auto 0;
+
+        .description {
+            margin: 34px 0;
+            display: flex;
+            flex-direction: column;
+
+            p {
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .list-img {
+            grid-template-columns: ~"repeat(2, 1fr)";
+            grid-template-rows: ~"repeat(2, 1fr)";
+            grid-gap: 30px;
+            display: grid;
+            height: 100%;
+
+            .img-item {
+                display: flex;
+                overflow: hidden;
+                align-items: center;
+                justify-content: center;
+                border-radius: 12px;
+
+                &:hover {
+                    img {
+                        scale: 1.1;
+                        cursor: pointer;
+                    }
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: all .5s;
+                }
+            }
+
+            .img-1 {
+                grid-area: ~"1 / 1 / 3 / 2";
+            }
+
+            .img-2 {
+                grid-area: ~"1 / 2 / 2 / 3";
+            }
+
+            .img-3 {
+                grid-area: ~"2 / 2 / 3 / 3";
+            }
+        }
+    }
+
+    .about-certs {
+        margin: 59px auto 0;
+
+        .title-section {
+            margin-bottom: 30px;
+        }
+    }
+
+    .about-brands {
+        margin-top: 56px;
+
+        .box-number {
+            display: flex;
+            align-items: center;
+            gap: 87px;
+            margin-top: 43px;
+        }
+    }
+
+    .product-newest {
+        margin-top: 91px;
+        padding-top: 73px;
+        width: 100%;
+
+        .swiper-pagination-bullet {
+            background: #fff;
+            opacity: 1;
+        }
+
+        .box-product {
+            margin-top: 47px;
+            background: #E3E2FF;
+            border-radius: 20px;
+            padding: 60px;
+
+            .product-avatar {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                max-height: 100%;
+
+                img {
+                    object-fit: contain;
+                    width: 100%;
+                }
+            }
+
+            .product-action {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 36px;
+
+                .btn-default {
+                    gap: 10px;
+                    background: var(--background);
+                    color: #fff;
+                }
+            }
+
+            .product-info {
+                .title {
+                    font-size: var(--font-size-xl);
+                    font-weight: var(--font-weight-lg);
+                    color: var(--color);
+                    margin-bottom: 0;
+                }
+
+                .description {
+                    margin: 36px 0;
+                    display: flex;
+                }
+
+                .brand-info {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+
+                    .label {
+                        font-weight: var(--font-weight-lg);
+                    }
+
+                    .icon {
+                        height: 52px;
+                        max-height: 100%;
+
+                        img {
+                            object-fit: contain;
+                            max-width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .about-kols {
+        margin-top: 76px;
+        width: 100%;
+
+        .tab-kol {
+            margin-top: 30px;
+
+            .tab-content {
+                margin-top: 30px;
+            }
+
+            .nav {
+                gap: 60px;
+                border: none;
+
+                .nav-link {
+                    border: none;
+                    padding: 0;
+                    font-size: 24px;
+                    color: var(--color-text-secondary);
+
+                    &.active {
+                        font-weight: var(--font-weight-md);
+                        color: var(--color);
+                    }
+                }
+            }
+
+            .list-experts {
+                max-width: 800px;
+                width: 100%;
+                margin: auto;
+            }
+        }
+    }
+
+    .background-special {
+        background: linear-gradient(180deg, #FFFFFF 66.35%, rgba(250, 247, 243, 0) 100%);
+    }
+
+    .list-parper {
+        padding-top: 46px;
+    }
+
+    .banner-ads {
+        margin-top: 100px;
+
+        .image-ads {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 345px;
+            max-height: 100%;
+
+            img {
+                transition: all .5s;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            &:hover {
+                img {
+                    scale: 1.1;
+                }
+            }
+        }
+    }
+
+    .section-sale {
+        margin-top: 120px;
+    }
+
+    .list-news {
+        margin-top: 95px;
+
+        .title-section {
+            margin-bottom: 60px;
+        }
+    }
+}
+
+@media (max-width: 1300px) {
+    .home-page {
+        .hero-banner {
+            height: 500px;
+
+            .hero-text {
+                margin: 80px 0 0 80px;
+
+                .title {
+                    font-size: 40px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .home-page {
+        .banner-ads {
+            margin-top: 80px;
+        }
+
+        .about-brands {
+            .box-number {
+                gap: 30px;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .home-page {
+
+        .hero-banner {
+            height: 400px;
+
+            .hero-text {
+                margin: 42px 0 0 22px;
+            }
+        }
+
+        .about-us {
+
+            .list-img {
+                grid-gap: 15px;
+            }
+        }
+
+        .about-kols {
+            .tab-kol {
+                .nav {
+                    gap: 27px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .home-page {
+        padding: 24px 0;
+
+        .hero-banner {
+            height: 222px;
+
+            .swiper-pagination {
+                bottom: 0 !important;
+            }
+
+            .hero-text {
+                max-width: 180px;
+
+                .description {
+                    font-size: 11px;
+                    margin: 10px 0;
+                }
+
+                .title {
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .about-us {
+            margin: 30px auto 0;
+
+            .list-img {
+                grid-gap: 9px;
+            }
+
+            .description {
+                margin: 14px 0;
+
+                p {
+                    font-size: 13px;
+                }
+            }
+        }
+
+        .about-certs {
+            margin: 0 auto 0;
+        }
+
+        .about-brands {
+            margin-top: 30px;
+        }
+
+        .product-newest {
+            margin-top: 57px;
+            padding-top: 34px;
+
+            .box-product {
+                margin-top: 18px;
+                padding: 36px 32px;
+
+                .product-action {
+                    .btn-default {
+                        font-size: 15px;
+                        height: 36px;
+
+                        img {
+                            height: 18px;
+                            width: 18px;
+                        }
+                    }
+                }
+
+                .product-info {
+                    .title {
+                        font-size: 24px;
+                    }
+
+                    .description {
+                        font-size: 14px;
+                        margin: 18px 0;
+                    }
+                }
+            }
+
+        }
+
+        .about-kols {
+            margin-top: 30px;
+
+            .tab-kol {
+                margin-top: 18px;
+
+                .nav {
+                    .nav-link {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        .why-choose {
+            padding-bottom: 0;
+        }
+
+        .banner-ads {
+            margin-top: 26px;
+
+            .image-ads {
+                height: 100px;
+            }
+        }
+
+        .section-sale {
+            margin-top: 57px;
+        }
+
+        .list-news {
+            margin-top: 80px;
+        }
+    }
+}
+
+@media (max-width: 413px) {
+    .home-page {
+        .about-kols {
+            margin-top: 30px;
+
+            .tab-kol {
+                margin-top: 18px;
+
+                .nav {
+                    gap: 0;
+                    justify-content: space-between !important;
+
+                    .nav-link {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .home-page {
+        .about-kols {
+            .tab-kol {
+                .nav {
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}

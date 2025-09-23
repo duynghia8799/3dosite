@@ -1,0 +1,322 @@
+.about-page {
+    padding: 0 0 63px;
+
+    .about-us {
+        margin-top: 63px;
+
+        .box-desc {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            .desc {
+                display: flex;
+                flex-direction: column;
+
+                p {
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        .box-infor {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+
+            .box-number {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+
+        .image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .about-benifit {
+        margin: 60px auto;
+
+        .image-benifit {
+            width: 100%;
+            height: 382px;
+            max-height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            overflow: hidden;
+
+            &:hover {
+                img {
+                    scale: 1.1;
+                    cursor: pointer;
+                }
+            }
+
+            img {
+                width: auto;
+                height: 100%;
+                transition: all .5s;
+                object-fit: cover;
+            }
+        }
+
+        .box-benifit {
+            background: #FF8704;
+            padding: 39px 50px;
+            border-radius: 28px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            height: 100%;
+            justify-content: center;
+
+            .title-section {
+                font-size: 28px;
+                font-weight: var(--font-weight-md);
+                margin-bottom: 0;
+            }
+
+            .desc {
+                font-weight: var(--font-weight-sm);
+            }
+
+            .trust {
+                font-weight: var(--font-weight-sm);
+
+                .number {
+                    font-size: var(--font-size-xl);
+                    font-weight: var(--font-weight-lg);
+                }
+            }
+        }
+    }
+
+    .about-value {
+        .box-vision {
+            background: #6B4FFF;
+            padding: 39px 50px;
+            border-radius: 28px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            justify-content: center;
+            height: 100%;
+
+            .title-section {
+                font-size: 28px;
+                font-weight: var(--font-weight-md);
+                margin-bottom: 0;
+            }
+
+            .desc {
+                font-weight: var(--font-weight-sm);
+            }
+
+            .box-infor {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .item {
+                    font-weight: var(--font-weight-sm);
+
+                    .number {
+                        font-size: var(--font-size-xl);
+                        font-weight: var(--font-weight-lg);
+                    }
+                }
+            }
+        }
+
+        .box-value {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+
+            .title-section {
+                margin-bottom: 0;
+                font-size: 28px;
+                font-weight: var(--font-weight-md);
+            }
+
+            .list-value {
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+
+                .item {
+                    display: flex;
+                    gap: 12px;
+                }
+
+                .infor {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+
+                    .title {
+                        line-height: 100%;
+                        font-size: 20px;
+                        font-weight: var(--font-weight-md);
+                    }
+                }
+
+                .thumb {
+                    flex-basis: 174px;
+                    flex-shrink: 0;
+                    border-radius: 12px;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        object-fit: contain;
+                    }
+                }
+            }
+        }
+    }
+
+    .about-certs {
+        margin: 60px auto;
+
+        .title-section {
+            margin-bottom: 30px;
+        }
+    }
+
+    .about-kols {
+        .list-partners {
+            margin-top: 60px;
+        }
+    }
+
+    .list-parper {
+        margin: 60px auto;
+    }
+}
+
+@media (max-width: 1200px) {
+    .about-page {
+        .about-us {
+            .box-infor {
+                gap: 30px;
+            }
+
+            .title-section {
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .about-page {
+        .about-us {
+            .image {
+                img {
+                    width: auto;
+                }
+            }
+        }
+
+        .about-benifit {
+            .image-benifit {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .about-page {
+        .about-us {
+            margin-top: 30px;
+
+            .image {
+                max-height: 300px;
+            }
+
+            .box-desc {
+                gap: 14px;
+
+                .desc {
+                    font-size: 13px;
+                }
+            }
+
+            .box-infor {
+                gap: 15px;
+
+                .box-number {
+                    flex-direction: row;
+                }
+            }
+        }
+
+        .about-benifit {
+            margin: 30px auto;
+        }
+
+        .about-benifit {
+            .box-benifit {
+                padding: 30px;
+
+                .trust {
+                    font-size: 15px;
+                }
+            }
+        }
+
+        .about-value {
+            .box-vision {
+                padding: 30px;
+
+                .box-infor {
+                    .item {
+                        font-size: 15px;
+
+                        .number {
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .about-certs {
+            margin: 30px auto;
+        }
+
+        .why-choose {
+            margin-bottom: 0;
+        }
+
+        .about-kols {
+            .list-partners {
+                margin-top: 30px;
+            }
+        }
+    }
+}

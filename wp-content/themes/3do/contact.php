@@ -102,7 +102,8 @@ get_header(); ?>
     <div class="contact-map container-layout-page">
         <div class="container-fluid">
             <div class="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d70676.88298279453!2d105.74304857037164!3d21.035914749603943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3135ab7de9746a17%3A0xb4931597c3a6e1a8!2zUmljaGxhbmQgU291dGhlcm4gVG93ZXIsIFJpY2hsYW5kIHNvdXRoZXJuLCA5QSBOZy4gMTgxIMSQLiBYdcOibiBUaOG7p3ksIEThu4tjaCBW4buNbmcgSOG6rXUsIEPhuqd1IEdp4bqleSwgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!3m2!1d21.035841299999998!2d105.7841974!5e1!3m2!1svi!2s!4v1755527222286!5m2!1svi!2s" width="100%" height="496" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <?= get_field('google_map'); ?>
+                <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d70676.88298279453!2d105.74304857037164!3d21.035914749603943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3135ab7de9746a17%3A0xb4931597c3a6e1a8!2zUmljaGxhbmQgU291dGhlcm4gVG93ZXIsIFJpY2hsYW5kIHNvdXRoZXJuLCA5QSBOZy4gMTgxIMSQLiBYdcOibiBUaOG7p3ksIEThu4tjaCBW4buNbmcgSOG6rXUsIEPhuqd1IEdp4bqleSwgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!3m2!1d21.035841299999998!2d105.7841974!5e1!3m2!1svi!2s!4v1755527222286!5m2!1svi!2s" width="100%" height="496" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
             </div>
         </div>
     </div>

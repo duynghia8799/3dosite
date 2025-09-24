@@ -90,18 +90,26 @@
                     <div class="footer-more">
                         <span class="footer-copyright">Copyright <?= date('Y'); ?> © Bản quyền thuộc về 3DO</span>
                         <div class="footer-social">
-                            <a href="#" class="icon">
-                                <img src="<?= home_url('/wp-content/themes/3do/assets/images/icons/icon-fb.svg'); ?>" alt="Facebook">
-                            </a>
-                            <a class="icon">
-                                <img src="<?= home_url('/wp-content/themes/3do/assets/images/icons/icon-zalo.svg'); ?>" alt="Zalo">
-                            </a>
-                            <a class="icon">
-                                <img src="<?= home_url('/wp-content/themes/3do/assets/images/icons/icon-yt.svg'); ?>" alt="Youtube">
-                            </a>
-                            <a class="icon">
-                                <img src="<?= home_url('/wp-content/themes/3do/assets/images/icons/icon-tiktok.svg'); ?>" alt="Tik Tok">
-                            </a>
+                            <?php
+                            if (have_rows('social_footer', 'option')):
+                                while (have_rows('social_footer', 'option')): the_row();
+                            ?>
+                                    <a <?= get_sub_field('link_facebook', 'option') ? 'href="' . get_sub_field('link_facebook', 'option') . '"' : ''; ?> class="icon">
+                                        <img src="<?= home_url('/wp-content/themes/3do/assets/images/icons/icon-fb.svg'); ?>" alt="Facebook">
+                                    </a>
+                                    <a <?= get_sub_field('link_zalo', 'option') ? 'href="' . get_sub_field('link_zalo', 'option') . '"' : ''; ?> class="icon">
+                                        <img src="<?= home_url('/wp-content/themes/3do/assets/images/icons/icon-zalo.svg'); ?>" alt="Zalo">
+                                    </a>
+                                    <a <?= get_sub_field('link_youtube', 'option') ? 'href="' . get_sub_field('link_youtube', 'option') . '"' : ''; ?> class="icon">
+                                        <img src="<?= home_url('/wp-content/themes/3do/assets/images/icons/icon-yt.svg'); ?>" alt="Youtube">
+                                    </a>
+                                    <a <?= get_sub_field('link_tiktok', 'option') ? 'href="' . get_sub_field('link_tiktok', 'option') . '"' : ''; ?> class="icon">
+                                        <img src="<?= home_url('/wp-content/themes/3do/assets/images/icons/icon-tiktok.svg'); ?>" alt="Tik Tok">
+                                    </a>
+                            <?php
+                                endwhile;
+                            endif;
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -120,15 +128,15 @@
     <img src="<?= home_url('/wp-content/themes/3do/assets/images/icons/icon-down.svg'); ?>" alt="Icon">
 </div>
 <div class="group-call">
-    <div class="item">
+    <a <?= get_field('hotline_group_call', 'option') ? 'href="tel:' . get_field('hotline_group_call', 'option') . '"' : '' ?> class="item">
         <img src="<?= home_url('/wp-content/themes/3do/assets/images/icons/icon-phone-ring.svg'); ?>" width="57" height="57" alt="Icon">
-    </div>
+    </a>
     <div class="item" data-bs-toggle="modal" data-bs-target=".lead-form-modal">
         <img src="<?= home_url('/wp-content/themes/3do/assets/images/icons/icon-mail-ring.svg'); ?>" width="57" height="57" alt="Icon">
     </div>
-    <div class="item">
+    <a <?= get_field('zalo_group_call', 'option') ? 'href="' . get_field('zalo_group_call', 'option') . '"' : '' ?> class="item" target="_blank">
         <img src="<?= home_url('/wp-content/themes/3do/assets/images/icons/icon-zalo-ring.svg'); ?>" width="57" height="57" alt="Icon">
-    </div>
+    </a>
 </div>
 <?php
 wp_footer();

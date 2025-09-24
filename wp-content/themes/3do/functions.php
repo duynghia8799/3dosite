@@ -9,7 +9,7 @@ remove_action('wp_head', 'rest_output_link_header', 11);
 remove_action('wp_head', 'rsd_link');
 
 add_action('wp_enqueue_scripts', function () {
-    $version = '1.0.1';
+    $version = '1.1.1';
     wp_enqueue_script('corejs', get_template_directory_uri() . '/libs/jquery/jquery.min.js', [], '3.7.1', true);
     wp_enqueue_style('main', get_template_directory_uri() . '/style.css', [], $version, 'all');
     wp_enqueue_script('main', get_template_directory_uri() . '/js/base.js', [], $version, true);

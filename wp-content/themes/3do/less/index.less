@@ -27,6 +27,10 @@ body {
     border-radius: 10px;
 }
 
+#ez-toc-container {
+    padding: 24px;
+}
+
 a {
     text-decoration: none !important;
 }
@@ -390,6 +394,7 @@ input[type="search"]::-webkit-search-cancel-button {
 
         li {
             position: relative;
+            flex-shrink: 0;
 
             &:after {
                 content: '|';
@@ -414,7 +419,15 @@ input[type="search"]::-webkit-search-cancel-button {
             }
 
             &.active {
+                flex-shrink: 1;
+
                 a {
+                    -webkit-line-clamp: 1;
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    display: -webkit-box;
+                    height: 25px;
+                    max-height: 100%;
                     font-weight: var(--font-weight-md);
                 }
             }
